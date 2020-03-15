@@ -1,9 +1,9 @@
 <h2>
-	<i class="fas fa-coffee"></i>
+	<i class="fas fa-utensils"></i>
 </h2>
 <h1>Tell us about <%= @restaurant[:name] %></h1>
 
-<form action="/restaurants/<%= @restaurant[:id] %>/attend/create">
+<form action="/restaurants/<%= @restaurantap[:id] %>/attend/create">
 	<div class="form-group">
 		<label>Have you been to <%=@restaurant[:name]%></label>
 		<select class="form-control" name="attend">
