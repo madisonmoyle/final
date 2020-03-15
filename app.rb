@@ -9,10 +9,24 @@ require "geocoder"                                                              
 connection_string = ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/development.sqlite3"  #
 DB ||= Sequel.connect(connection_string)                                              #
 DB.loggers << Logger.new($stdout) unless DB.loggers.size > 0                          #
-def view(template); erb template.to_rrressdfsdfsdm; end                                          #
+def view(template); erb template.to_sym; end                                          #
 use Rack::Session::Cookie, key: 'rack.session', path: '/', secret: 'secret'           #
 before { puts; puts "--------------- NEW REQUEST ---------------"; puts }             #
-after { puts; }                                                                       #
+after { puts; }    
+
+# put your API credentials here (found on your Twilio dashboard)
+account_sid = ENV["TWILIO_ACCOUNT_SID"]
+auth_token = ENV["TWILIO_AUTH_TOKEN"]
+
+# set up a client to talk to the Twilio REST API
+client = Twilio::REST::Client.new(account_sid, auth_token)
+
+# send the SMS from your trial Twilio number to your verified non-Twilio number
+client.messages.create(
+ from: "+13477897597", 
+ to: "+12604093910",
+ body: "Hey KIEI 451!"
+)                                                                   #
 #######################################################################################
 
 restaurants_table = DB.from(:restaurants)

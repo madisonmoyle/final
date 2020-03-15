@@ -3,7 +3,7 @@
 </h2>
 <h1>Tell us about <%= @restaurant[:name] %></h1>
 
-<form action="/shops/<%= @shop[:id] %>/attend/create">
+<form action="/restaurants/<%= @restaurant[:id] %>/attend/create">
 	<div class="form-group">
 		<label>Have you been to <%=@restaurant[:name]%></label>
 		<select class="form-control" name="attend">
