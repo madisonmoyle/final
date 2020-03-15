@@ -16,6 +16,7 @@ DB.create_table! :restaurants do
   Boolean :breakfast
   Boolean :lunch
   Boolean :dinner
+  String :pricing
   String :google_stars
 end
 
@@ -49,7 +50,8 @@ restaurants_table.insert(name: "Lula Cafe",
                     lunch: true,
                     dinner: true,
                     pricing: "medium",
-                    google_stars: "4.7",)
+                    google_stars: "4.7"
+                    )
 
 restaurants_table.insert(name: "Pacific Standard Time", 
                     address: "141 West Erie Street",
@@ -60,8 +62,9 @@ restaurants_table.insert(name: "Pacific Standard Time",
                     breakfast: false, 
                     lunch: true,
                     dinner: true,
-                    pricing: "medium"
-                    google_stars: "4.6",)
+                    pricing: "medium",
+                    google_stars: "4.6"
+                    )
 
 restaurants_table.insert(name: "Galit", 
                     address: "2429 North Lincoln Avenue",
@@ -72,8 +75,9 @@ restaurants_table.insert(name: "Galit",
                     breakfast: false, 
                     lunch: false,
                     dinner: true,
-                    pricing: "medium"
-                    google_stars: "4.6",)
+                    pricing: "medium",
+                    google_stars: "4.6"
+                    )
 
  restaurants_table.insert(name: "Pequod's Pizza", 
                     address: "2207 North Clybourn Avenue",
@@ -84,7 +88,8 @@ restaurants_table.insert(name: "Galit",
                     breakfast: false, 
                     lunch: false,
                     dinner: true,
-                    pricing: "low"
-                    google_stars: "4.4",)
+                    pricing: "low",
+                    google_stars: "4.4"
+                    )
 
 puts "database created"

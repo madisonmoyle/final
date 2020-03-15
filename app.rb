@@ -27,18 +27,18 @@ get "/" do
 
     pp restaurants_table.all.to_a
     @restaurants = restaurants_table.all.to_a
-    view "shops"
+    view "restaurants"
 end
 
 get "/restaurants/:id" do
     puts "params: #{params}"
 
-    @restaurant = shops_table.where(id: params[:id]).to_a[0]
+    @restaurant = restaurants_table.where(id: params[:id]).to_a[0]
     pp @restaurant
     @users_table = users_table 
-    @attend = attend_table.where(shop_id: @shop[:id]).to_a
-    @going_count = attend_table.where(shop_id: @shop[:id], attend: true).count
-    @review_avg = attend_table.where(shop_id: @shop[:id], attend: true).avg(:rating)
+    @attend = attend_table.where(restaurant_id: @restaurant[:id]).to_a
+    @going_count = attend_table.where(restaurant_id: @restaurant[:id], attend: true).count
+    @review_avg = attend_table.where(restaurant_id: @restaurant[:id], attend: true).avg(:rating)
    
 
     results = Geocoder.search("#{@restaurant[:address]},#{@restaurant[:city]} #{@restaurant[:state]}")
@@ -72,7 +72,7 @@ get "/restaurants/:id/attend/create" do
     @restaurant = restaurants_table.where(id: params[:id]).to_a[0]
     
     attend_table.insert(
-    shop_id: @restaurant[:id],
+    restaurant_id: @restaurant[:id],
     user_id: session["user_id"],
     rating: params["rating"],
     comments: params["comments"],
