@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Google Fonts -->
-    <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -18,7 +17,7 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-	<title>Drinkist</title>
+	<title>Restaurant Ratings</title>
 </head>
 
 <body>
@@ -26,15 +25,15 @@
 	<nav class="navbar navbar-light bg-light">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="/">Drinkist<i class="fas fa-coffee"></i></a>
+				<a class="nav-link" href="/">Restaurant Ratings<i class="fas fa-utensils"></i></a>
 			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
 				<% if @current_user%>
-				<a href="/logout" class="btn btn-primary">Logout</a>
+				<a href="/logout" class="btn btn-info">Logout</a>
 				<%else %>
-				<a href="/logins/new" class="btn btn-primary">Sign In</a>
+				<a href="/logins/new" class="btn btn-info">Sign In</a>
 				<%end%>
 			</li>
 		</ul>
@@ -46,8 +45,8 @@
 	</div>
 
 
-	<footer class="page-footer font-small text-center">
-		<a href="/"> View all Shops</a>
+    <footer class="page-footer font-small text-center">
+		<a href="/"> View all Restaurants</a>
 	</footer>
 
 	<!-- Optional JavaScript -->

@@ -29,7 +29,7 @@ DB.create_table! :users do
 
 DB.create_table! :attend do
   primary_key :id
-  foreign_key :shop_id
+  foreign_key :restaurant_id
   foreign_key :user_id
   Boolean :attend
   Integer :rating
