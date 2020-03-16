@@ -13,10 +13,6 @@ DB.create_table! :restaurants do
   String :state
   String :country
   String :url, text: true
-  Boolean :breakfast
-  Boolean :lunch
-  Boolean :dinner
-  String :pricing
   String :google_stars
 end
 
@@ -46,10 +42,6 @@ restaurants_table.insert(name: "Lula Cafe",
                     state: "IL",
                     country: "USA",
                     url: "http://lulacafe.com/", 
-                    breakfast: true, 
-                    lunch: true,
-                    dinner: true,
-                    pricing: "medium",
                     google_stars: "4.7"
                     )
 
@@ -59,10 +51,6 @@ restaurants_table.insert(name: "Pacific Standard Time",
                     state: "IL",
                     country: "USA",
                     url: "https://www.pstchicago.com/", 
-                    breakfast: false, 
-                    lunch: true,
-                    dinner: true,
-                    pricing: "medium",
                     google_stars: "4.6"
                     )
 
@@ -72,10 +60,6 @@ restaurants_table.insert(name: "Galit",
                     state: "IL",
                     country: "USA",
                     url: "https://www.galitrestaurant.com/", 
-                    breakfast: false, 
-                    lunch: false,
-                    dinner: true,
-                    pricing: "medium",
                     google_stars: "4.6"
                     )
 
@@ -85,10 +69,6 @@ restaurants_table.insert(name: "Galit",
                     state: "IL",
                     country: "USA",
                     url: "https://pequodspizza.com/chicago/", 
-                    breakfast: false, 
-                    lunch: false,
-                    dinner: true,
-                    pricing: "low",
                     google_stars: "4.4"
                     )
 
